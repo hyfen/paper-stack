@@ -8,6 +8,12 @@
 {% endblock %}
 
 {% block body %}
-	
+	<div id="all">
+		<div id="paperlist">
+			{% for paper in papers %}
+				{% include "_paper_listing.html" %}
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
 
