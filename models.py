@@ -6,7 +6,7 @@ import logging
 
 
 class Paper(db.Model):
-    title = db.StringProperty(multiline=False)
+    title = db.StringProperty(required=True, multiline=False)
     description = db.TextProperty()
     tags = db.StringListProperty()
     date = db.DateTimeProperty(auto_now_add=True)
@@ -14,6 +14,21 @@ class Paper(db.Model):
     # reference for future properties
     #creator = db.UserProperty()
     #author(s).. = db.ReferenceProperty(Hat)
+    
+    points = db.IntegerProperty(default=0)
+    # TODO: points should track who gave points so each user can only add one point 
+    
+    link = db.LinkProperty() # for fully qualified links
+    pdf_link = db.LinkProperty()
+    # Links aren't required.  We support linking to papers or just discussing
+    # them or some part of them submitted via the description.
+    
+    #To be auto-filled:
+    #name = db.StringProperty()
+    #abstract = db.TextProperty()
+    #references = ..?
+    #keywords = db.StringListProperty()
+    #authors = ...? (add Author model?)
 
     
     def permalink(self):
