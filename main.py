@@ -34,11 +34,6 @@ def main():
   # Run the WSGI CGI handler with that application.
   util.run_wsgi_app(application)
 
-
-def hello_world(*args, **kwargs):
-    from django.http import HttpResponse
-    return HttpResponse("Hello, world.")
-
 if __name__ == '__main__':
   main()
   
