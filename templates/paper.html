@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ paper.title }}
+{% endblock %}
+
+{% block head %}
+	
+{% endblock %}
+
+{% block body %}
+
+<!-- extract to a partial? -->
+<div id="paper">
+	<h1>{{ paper.title }}</h1>
+	<div id="date">{{ paper_date }}</div>
+	<div id="points">{{ paper.points }}</div>
+	
+	<div id="description">{{ paper_html_description }}</div>
+	
+	{% if paper.link %}
+		<div id="link"><a href="{{ paper.link }}">View</a></div>
+	{% endif %}
+	
+	{% if paper.pdf_link %}
+		<div id="pdf-link"><a href="{{ paper.pdf_link }}">View PDF</a> <img src="/static/images/pdf.gif" alt="PDF" /></div>
+	{% endif %}
+	
+	<div id="tags">{{ paper.spaced_tags }}</div>
+</div>
+
+{% endblock %}

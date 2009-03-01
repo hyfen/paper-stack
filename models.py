@@ -8,7 +8,11 @@ import logging
 class Paper(db.Model):
     title = db.StringProperty(required=True, multiline=False)
     description = db.TextProperty()
+    
     tags = db.StringListProperty()
+    def spaced_tags(self, spacer=', '):
+        return spacer.join(self.tags)
+    
     date = db.DateTimeProperty(auto_now_add=True)
     
     # reference for future properties
