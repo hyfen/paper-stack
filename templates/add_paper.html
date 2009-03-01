@@ -2,5 +2,8 @@
 
 {% block body %}
 	<h1>Add a paper</h1>
+	<form action="{{dest_url}}" method="POST">
 	{{ form.as_p }}
+	<input type="submit" value="Submit" />
+	</form>
 {% endblock %}
