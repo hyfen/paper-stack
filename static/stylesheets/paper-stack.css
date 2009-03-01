@@ -1,1 +1,24 @@
 /* base style for paper-stack */
+
+
+/* header-menu styles */
+
+
+
+#header-menu {
+}
+#header-menu li {
+    list-style: none;
+}
+#header-menu a {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 8px 12px;
+	text-decoration: none;
+	font-weight:normal;
+}
+#header-menu a:hover {
+	background: #EEE url("images/hover.gif") bottom center no-repeat;
+	padding-bottom: 8px;                    
+}

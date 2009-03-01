@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		    <link rel="stylesheet" href="stylesheets/paper-stack.css" type="text/css" media="screen, projection">
+		    <link rel="stylesheet" href="/static/stylesheets/paper-stack.css" type="text/css" media="screen, projection">
 		    
 		    <link rel="stylesheet" href="/static/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
             <link rel="stylesheet" href="/static/stylesheets/blueprint/print.css" type="text/css" media="print"> 
@@ -25,13 +25,23 @@
 	    
 	    <div class="container">
 	    
-    	    <div id="header">
+    	    <div id="header" class="span-10">>
                 <a href="/"><img src="/static/images/header.png" /></a>
+                
+                <div id="header-menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>                        
+                        <li><a href="/submit">Submit</a></li>
+                        <li><a href="">Latest</a></li>
+                    </ul>
+                </div>
     	    </div>
 	    
+			<div class="span-10">
     		{% block body %}
-			
+			    			
     		{% endblock %}
+    		</div>
 		
     	    <div id="footer">
     	        <span class="quiet">header image courtesy of <a href="http://flickr.com/photos/striatic/443918201/">striatic</a></span>
