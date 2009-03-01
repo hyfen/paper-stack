@@ -3,6 +3,8 @@ from google.appengine.ext import db
 
 import random
 import logging
+import datetime
+
 
 
 class Paper(db.Model):
@@ -38,6 +40,13 @@ class Paper(db.Model):
     
     def permalink(self):
         return "/papers/%(id)s/" % {'id' : self.key().id()}
+
+    def age_in_hours(self):
+        delta = datetime.datetime.now() - self.date
+        return delta.days * 24 + delta.seconds / 3600
+
+    def score(self):
+        return int((self.points - 1) / (self.age_in_hours() + 2) ** 1.5)
 
     @classmethod
     def get_random(cls):
@@ -87,7 +96,7 @@ class Paper(db.Model):
             title = string.capwords(random_text(5,12))
             desc = string.capwords(random_text(0,100,True), sep='.  ')
             tags = filter(lambda x: x, random_text(0,8).split(' '))
-            date = randomDate("1/1/2009 1:30 PM", "2/28/2009 6:45 PM", random.random())
+            date = randomDate("2/14/2009 1:30 PM", "2/28/2009 6:45 PM", random.random())
             points = random.randint(0,500)
     
             link = None
