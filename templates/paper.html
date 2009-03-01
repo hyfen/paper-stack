@@ -14,7 +14,7 @@
 <div id="paper">
 	<h1>{{ paper.title }}</h1>
 	<div id="date">{{ paper_date }}</div>
-	<div id="points">{{ paper.points }}</div>
+	<div id="points">{{ paper.points }} | <a href="/vote/{{paper.key.id}}">Vote!</a> <br/></div>
 	
 	<div id="description">{{ paper_html_description }}</div>
 	
