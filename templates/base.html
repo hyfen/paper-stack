@@ -4,6 +4,14 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		    <link rel="stylesheet" href="stylesheets/paper-stack.css" type="text/css" media="screen, projection">
+		    
+		    <link rel="stylesheet" href="/static/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+            <link rel="stylesheet" href="/static/stylesheets/blueprint/print.css" type="text/css" media="print"> 
+            <!--[if IE 6]>
+              <link rel="stylesheet" href="/static/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection">
+            <![endif]-->
+            
+		    
 			<title>paper-stack: 
 				{% block title %}
 					
@@ -15,16 +23,19 @@
 	</head>
 	<body>
 	    
-	    <div id="header">
-            <img src="/static/images/header.png" />
-	    </div>
+	    <div class="container">
 	    
-		{% block body %}
+    	    <div id="header">
+                <img src="/static/images/header.png" />
+    	    </div>
+	    
+    		{% block body %}
 			
-		{% endblock %}
+    		{% endblock %}
 		
-	    <div id="footer">
-	        <span="small">header image courtesy of <a href="http://flickr.com/photos/striatic/443918201/">striatic</a></span>
+    	    <div id="footer">
+    	        <span class="quiet">header image courtesy of <a href="http://flickr.com/photos/striatic/443918201/">striatic</a></span>
+    	    </div>
 	    </div>
 	</body>
 </html>
